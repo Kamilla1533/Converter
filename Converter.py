@@ -23,7 +23,6 @@ class KiloConverterGUI:
         self.quit_button.pack(side="bottom")
         self.calc_button.pack(side="bottom")
 
-
         self.top_frame.pack()
         self.bottom_frame.pack()
 
