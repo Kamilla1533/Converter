@@ -1,7 +1,7 @@
 import tkinter
 import tkinter.messagebox
 
-class KiloConverterGUI:
+class TemperatureConverterGUI:
     def __init__(self):
         self.main_window = tkinter.Tk()
         self.main_window.title("Converter")
@@ -10,11 +10,11 @@ class KiloConverterGUI:
         self.top_frame = tkinter.Frame(self.main_window)
         self.bottom_frame = tkinter.Frame(self.main_window)
 
-        self.prompt_label = tkinter.Label(self.top_frame, text = "Введите расстояние в км:")
-        self.kilo_entry = tkinter.Entry(self.top_frame, width = 10)
+        self.prompt_label = tkinter.Label(self.top_frame, text = "Введите температуру в Цельсиях:")
+        self.temp_entry = tkinter.Entry(self.top_frame, width = 10)
 
         self.prompt_label.pack(side="left")
-        self.kilo_entry.pack(side="left")
+        self.temp_entry.pack(side="left")
 
         # Нижние виджеты
         self.calc_button = tkinter.Button(self.main_window, text="Преобразовать", command=self.convert)
@@ -29,9 +29,9 @@ class KiloConverterGUI:
         tkinter.mainloop()
 
     def convert(self):
-        kilo = float(self.kilo_entry.get())
-        miles = kilo * 0.6214
-        tkinter.messagebox.showinfo("Результаты", str(kilo) + " километров эквивалетно " + str(miles) + " милям")
+        celsius = float(self.temp_entry.get())
+        fr = (celsius * 9 / 5) + 32
+        tkinter.messagebox.showinfo("Результаты", str(celsius) + " градусов по Цельсию эквивалетно " + str(fr) + " градусам по Фаренгейту")
 
 if __name__ == '__main__':
-    kilo_conv = KiloConverterGUI()
+    temp_conv = TemperatureConverterGUI()
